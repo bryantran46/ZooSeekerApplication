@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DirectionsActivity">
+
+    <EditText
+        android:id="@+id/mock_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:inputType="numberSigned"
+        android:hint="Mock latitude..."
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/mock_location_switch"
+        app:layout_constraintTop_toBottomOf="@id/mock_location_switch" />
+
+    <EditText
+        android:id="@+id/mock_lon"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:inputType="numberSigned"
+        android:hint="Mock longitude..."
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/mock_location_switch"
+        app:layout_constraintTop_toBottomOf="@id/mock_lat" />
+
+    <Switch
+        android:id="@+id/mock_location_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Use mock location"
+        android:onClick="onMockButtonClicked"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Switch
+        android:id="@+id/detailed_directions_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="onDirectionsSwitchToggled"
+        android:text="Detailed Directions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/navigate_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Navigating to:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exhibit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text=""
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigate_text" />
+
+    <TextView
+        android:id="@+id/directions_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exhibit_name" />
+
+    <View
+        android:id="@+id/next_exhibit_border"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/previous_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onPreviousButtonClicked"
+        android:text="Previous"
+        app:layout_constraintBottom_toBottomOf="@id/skip_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/skip_button" />
+
+    <Button
+        android:id="@+id/skip_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Skip"
+        android:onClick="onSkipButtonClicked"
+        app:layout_constraintBottom_toTopOf="@+id/next_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="onNextButtonClicked"
+        app:layout_constraintBottom_toBottomOf="@id/skip_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/skip_button" />
+
+    <TextView
+        android:id="@+id/next_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

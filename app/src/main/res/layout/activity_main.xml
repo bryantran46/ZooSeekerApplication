@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:hint="Search Exhibits..."
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/search_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- android:backgroundTint="#00FFFFFF" -->
+    <ImageButton
+        android:id="@+id/search_button"
+        android:onClick="onSearchButtonClicked"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_bar"
+        app:layout_constraintBottom_toBottomOf="@id/search_bar"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <View
+        android:id="@+id/search_bar_border"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/zoo_exhibits"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_border"
+        app:layout_constraintBottom_toTopOf="@id/compact_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/compact_border"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/num_selected" />
+
+    <TextView
+        android:id="@+id/num_selected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0 Exhibits Selected:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/compact_border2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/compact_border2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/compact_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/compact_list"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/plan_border" />
+
+    <View
+        android:id="@+id/plan_border"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/plan_button" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:onClick="onClearButtonClicked"
+        android:text="Clear Selected"
+        app:layout_constraintTop_toTopOf="@id/plan_button"
+        app:layout_constraintBottom_toBottomOf="@id/plan_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/plan_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onPlanButtonClicked"
+        android:text="Plan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
